@@ -1,0 +1,84 @@
+
+import random
+
+
+def level_three():
+    game = ''
+    word_list = ['Gold', 'Silver','Iron','Diamond']
+    game = ''
+    print(
+        "Hi Fam! Welcome to PetGuess Game(LEVEL 3). Out of the four words bellow, guess the next word? \n Let's keep the fun!!!")
+    print(word_list)
+    ran = random.choice(word_list)
+    list = ran.upper()
+    count = 0
+    while game.upper() != list:
+        game = input('Enter your Choice')
+        if game.upper() != list:
+            count += 1
+            print('Gosh! You Failed {} out of 3 trials.'.format(count))
+            if count > 3:
+                question = input('Oooops! Sorry, You Lose! \n Do you want to try again?(Yes/No)')
+                if question.upper() == 'YES':
+                    guess_game()
+                elif question.upper() == 'NO':
+                    print('Game Over!!!')
+    if game.upper() == list:
+        print('You win, Congratulations! You are a PetGuess Champion!!!')
+        question = input('Do you want to try again?(Yes/No)')
+        if question.upper() == 'YES':
+            guess_game()
+        elif question.upper() == 'NO':
+            print('Game Over!!!')
+
+
+def level_two():
+    game = ''
+    word_list = ['Bed', 'Jug', 'Rex']
+    game = ''
+    print(
+        "Hi Fam! Welcome to PetGuess Game(LEVEL 2). Out of the three words bellow, guess the next word? \n Let's keep the fun!!!")
+    print(word_list)
+    ran = random.choice(word_list)
+    list = ran.upper()
+    count = 0
+    while game.upper() != list:
+        game = input('Enter your Choice')
+        if game.upper() != list:
+            count += 1
+            print('Gosh! You Failed {} out of 3 trials.'.format(count))
+            if count > 3:
+                question = input('Oooops! Sorry, You Lose! \n Do you want to try again?(Yes/No)')
+                if question.upper() == 'YES':
+                    guess_game()
+                elif question.upper() == 'NO':
+                    print('Game Over!!!')
+    if game.upper() == list:
+        print('You win, Congratulations! Move on to the Final Level. Goodluck!')
+        level_three()
+def guess_game():
+    game = ''
+    word_list = ['Boy','Girl']
+    game=''
+    print("Hi Fam! Welcome to PetGuess Game(LEVEL 1). Out of the two words bellow, guess the next word? \n Let's keep the fun!!!")
+    print(word_list)
+    ran = random.choice(word_list)
+    list = ran.upper()
+    count = 0
+    while game.upper() != list:
+        game= input('Enter your Choice')
+        if game.upper() != list:
+            count += 1
+            print('Gosh! You Failed {} out of 3 trials.'.format(count))
+            if count > 3:
+                question = input('Oooops! Sorry, You Lose! \n Do you want to try again?(Yes/No)')
+                if question.upper() == 'YES':
+                    guess_game()
+                elif question.upper() == 'NO':
+                    print('Game Over!!!')
+    if game.upper() == list:
+        print('You win, Congratulations! Move on to the next Level. Goodluck!')
+        level_two()
+
+
+guess_game()
